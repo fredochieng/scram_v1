@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardCController extends Controller
+class DashboardController extends Controller
 {
 
     public function dashboard(){
