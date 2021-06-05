@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
@@ -39,7 +40,6 @@ class AuthenticationController extends Controller
          // attempt to do the login
          if (Auth::attempt($userdata)) {
 
-            dd("Sucess");
              $user = auth()->user();
              /** Get the user role for redirection */
              $user = User::where('email', '=', $request->input('email'))->first();
@@ -52,11 +52,11 @@ class AuthenticationController extends Controller
             // if ($role_id == 1) {
 
             //      toastr()->success('Login successful');
-               return redirect('/home');
+               return redirect('/dashboard');
 
 
          } else {
-             dd("Failure");
+
             //   toastr()->error('Incorrect email or password');
              return back();
          }

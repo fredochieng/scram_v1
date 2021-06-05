@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/auth/login', 'App\Http\Controllers\Auth\AuthenticationController@show_login_form')->name('signin');
 Route::get('/auth/login', [App\Http\Controllers\Auth\AuthenticationController::class, 'show_login_form'])->name('login-page');
 Route::post('/user/login', [App\Http\Controllers\Auth\AuthenticationController::class, 'user_login'])->name('user.login');
 
 // Auth::routes();
+Route::post('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
