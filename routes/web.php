@@ -21,6 +21,6 @@ Route::get('/auth/login', [App\Http\Controllers\Auth\AuthenticationController::c
 Route::post('/user/login', [App\Http\Controllers\Auth\AuthenticationController::class, 'user_login'])->name('user.login');
 
 // Auth::routes();
-Route::post('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
